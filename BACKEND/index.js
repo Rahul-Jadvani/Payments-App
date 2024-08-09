@@ -28,7 +28,7 @@ app.use((err, req, res, next) => {
     try {
         await dbConnection();
         // Start the Server
-        const port = process.env.PORT; // Default to 3000 if not set
+        const port = process.env.PORT || 5500; // Default to 3000 if not set
         app.listen(port, () => {
             console.log(`Server is listening...`);
         });
