@@ -18,7 +18,7 @@ This is a full-stack payment application built using Node.js, Express.js, React,
 ### Installation
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/payment-app.git
+    git clone https://github.com/Rahul-Jadvani/payment-app.git
     ```
 2. **Install dependencies:**
     - For the backend:
@@ -33,7 +33,7 @@ This is a full-stack payment application built using Node.js, Express.js, React,
         ```
 3. **Start MongoDB:**
     ```bash
-    mongod
+    mongodb
     ```
 4. **Run the backend server:**
     ```bash
@@ -43,7 +43,7 @@ This is a full-stack payment application built using Node.js, Express.js, React,
 5. **Run the frontend app:**
     ```bash
     cd ../frontend
-    npm start
+    npm run dev
     ```
 
 ## Usage
