@@ -10,7 +10,9 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://payments-app-aafe.onrender.com', // Include your URL here
+}));
 app.use(express.json());
 
 // Routes
