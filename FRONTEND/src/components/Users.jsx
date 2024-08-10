@@ -15,7 +15,7 @@ const Users = () => {
         setError("");
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get(`http://localhost:5500/api/v1/user/bulk?filter=${filter}`, {
+            const response = await axios.get(`https://payments-app-aafe.onrender.com/api/v1/user/bulk?filter=${filter}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

@@ -18,7 +18,7 @@ const Transaction = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/api/v1/account/transfer",
+        "https://payments-app-aafe.onrender.com/api/v1/account/transfer",
         {
           to: id,
           amount

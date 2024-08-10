@@ -18,7 +18,7 @@ const Signup = () => {
 
     const handleSignup = async () => {
         try {
-            const response = await axios.post("http://localhost:5500/api/v1/user/signup", {
+            const response = await axios.post("https://payments-app-aafe.onrender.com/api/v1/user/signup", {
                 userName,
                 firstName,
                 lastName,

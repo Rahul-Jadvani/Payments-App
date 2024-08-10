@@ -11,7 +11,7 @@ const AppBar = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get("http://localhost:5500/api/v1/user/bulk", {
+                const response = await axios.get("https://payments-app-aafe.onrender.com/api/v1/user/bulk", {
                     headers: {
                         Authorization: "Bearer " + localStorage.getItem("token")
                     }
