@@ -11,10 +11,14 @@ const Signin = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // State to track loading status
 
   const navigate = useNavigate();
 
   const handleSignin = async () => {
+    setLoading(true); // Start loading
+    setError(null); // Clear any previous errors
+
     try {
       const response = await axios.post("https://payments-app-aafe.onrender.com/api/v1/user/signin", {
         userName,
@@ -25,7 +29,6 @@ const Signin = () => {
         }
       });
 
-      // Assuming the presence of a token means success
       if (response.status === 200 && response.data.token) {
         localStorage.setItem("token", response.data.token);
         navigate('/dashboard'); // Navigate to dashboard on success
@@ -34,6 +37,8 @@ const Signin = () => {
       }
     } catch (err) {
       setError(err.response?.data?.message || "An error occurred during signin.");
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -47,7 +52,7 @@ const Signin = () => {
           <InputBox onChange={(e) => setPassword(e.target.value)} placeholder="your secret" label={"Password"} />
           {error && <div className="text-red-500">{error}</div>}
           <div className="pt-4">
-            <Button onClick={handleSignin} label={"Sign in"} />
+            <Button onClick={handleSignin} label={loading ? "Signing in..." : "Sign in"} disabled={loading} />
           </div>
           <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/signup"} />
         </div>
